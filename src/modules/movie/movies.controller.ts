@@ -10,8 +10,6 @@ export class MoviesController {
 
   @Get()
   movies() {
-    console.log('/movies controller');
-
     return this.moviesService.movies();
   }
 }

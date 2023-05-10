@@ -11,14 +11,17 @@ export class MoviesService {
   constructor(
     @InjectRepository(Comment) private moviesRepository: Repository<Comment>,
   ) {
+    this.http = new Http();
     this.moviesRepository = moviesRepository;
   }
 
   async movies() {
+    const moviesEndpoint = `${process.env.SWAPI_BASE_URL}/films`;
     try {
-      console.log('/movies service');
+      console.log('/movies service', moviesEndpoint);
+
       return await (
-        await this.http.makeGetRequest(`${process.env.SWAPI_BASE_URL}/films`)
+        await this.http.makeGetRequest(moviesEndpoint)
       ).data;
     } catch (error) {
       throw error;
