@@ -20,11 +20,41 @@ export class MoviesService {
     try {
       console.log('/movies service', moviesEndpoint);
 
-      return await (
+      const response = await (
         await this.http.makeGetRequest(moviesEndpoint)
       ).data;
+
+      const movieObj = response?.results;
+
+      const res = this.formartMoviesResponse(movieObj);
+
+      // const sortedMovies = this.sortMoviesByReleaseDate(res);
+
+      return res;
     } catch (error) {
       throw error;
     }
+  }
+
+  //sort movies by release date
+  private async sortMoviesByReleaseDate(movies) {
+    const sortedMovies = movies.sort((a, b) => {
+      return (
+        new Date(a.release_date).getTime() - new Date(b.release_date).getTime()
+      );
+    });
+
+    return sortedMovies;
+  }
+
+  private async formartMoviesResponse(movies) {
+    const formartedMovies = movies.map((movie) => ({
+      title: movie.title,
+      opening_crawl: movie.opening_crawl,
+      release_date: movie.release_date,
+      comment_count: 0,
+    }));
+
+    return formartedMovies;
   }
 }
