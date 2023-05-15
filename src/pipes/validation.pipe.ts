@@ -29,7 +29,7 @@ export class ValidationPipe implements PipeTransform<any> {
         errors[0]?.constraints[messageKey] ??
         errors[0].children[0].constraints[messageKey];
 
-      throw new UnprocessableEntityException(validationErrorMsg);
+      throw new UnprocessableEntityException(errors);
     }
     return value;
   }

@@ -22,7 +22,7 @@ export class Comment {
     nullable: false,
     type: 'text',
   })
-  body: string;
+  comment: string;
 
   @CreateDateColumn()
   createdAt: Date;

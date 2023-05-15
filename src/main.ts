@@ -20,7 +20,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new ResponseInterceptor());
-
+  console.log('Star Wars API running on port', port);
   await app.listen(port);
 }
 bootstrap();
