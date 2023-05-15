@@ -30,6 +30,11 @@ class ConfigService {
     return mode == 'production';
   }
 
+  public isDevelopment() {
+    const mode = this.getValue('NODE_ENV', false)?.toLowerCase();
+    return mode == 'development' || mode == 'dev' || mode == 'develop';
+  }
+
   public getTypeOrmConfig(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
@@ -41,7 +46,7 @@ class ConfigService {
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       migrationsTableName: 'migration',
       migrations: ['src/migration/*.ts'],
-      ssl: true,
+      ssl: this.isDevelopment() ? false : { rejectUnauthorized: false },
       synchronize: true,
     };
   }
