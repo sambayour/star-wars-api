@@ -23,7 +23,7 @@ $ npm run start:prod
 
 ## Endpoint
 
-# baseUrl
+## baseUrl
 
 Either of this baseurl can be used while testing the application
 
@@ -31,23 +31,23 @@ Either of this baseurl can be used while testing the application
 or
 `https://star-wars-service.onrender.com`
 
-# Endpoint Documentation(Swagger)
+## Endpoint Documentation(Swagger)
 
 The endpoints are properly documented with Swagger and can be access at
 [digitalocean](https://lobster-app-5qld2.ondigitalocean.app/api/docs#)
 or
 [render](https://star-wars-service.onrender.com/api/docs#).
 
-# movies
+## movies
 
 - GET - [all movies](https://lobster-app-5qld2.ondigitalocean.app/movies)
 
-# movies comment
+## movies comment
 
 - GET - [get movies comments](https://lobster-app-5qld2.ondigitalocean.app/movies/2/comments)
 - POST - [add movies comments](https://lobster-app-5qld2.ondigitalocean.app/movies/2/comments)
 
-# characters
+## characters
 
 - GET -[allcharacters](https://lobster-app-5qld2.ondigitalocean.app/movies/characters)
 - GET -[allcharacters sort by name asc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:asc)
@@ -55,7 +55,7 @@ or
 - GET -[allcharacters filter by gender male](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=male)
 - GET -[allcharacters filter by gender female](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=female)
 
-# movies characters
+## movies characters
 
 - GET -[movieId 3 with characters](https://lobster-app-5qld2.ondigitalocean.app/movies/3/characters)
 - GET -[sort movieId 3 characters by name asc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:asc)
