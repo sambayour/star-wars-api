@@ -1,20 +1,10 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Ip,
-  Param,
-  Post,
-  Query,
-  Req,
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Req } from '@nestjs/common';
 
 import { MoviesService } from './movies.service';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
 import { AddCommentDTO } from './dto/comment.dto';
 import { Request } from 'express';
 import * as requestIp from 'request-ip';
-import { RealIP } from 'nestjs-real-ip';
 
 @Controller('movies')
 @ApiTags('movies')
@@ -30,16 +20,12 @@ export class MoviesController {
   addComment(
     @Body() payload: AddCommentDTO,
     @Param('id') movieId: number,
-    @Ip() ip: string,
     @Req() request: Request,
-    @RealIP() realip: string,
   ) {
     const ipAddress = requestIp.getClientIp(request);
-    console.log('nest ip:', ip);
     console.log('request-ip:', ipAddress);
-    console.log('realip IP:', realip);
 
-    return this.moviesService.addComment(payload, movieId, ip);
+    return this.moviesService.addComment(payload, movieId, ipAddress);
   }
 
   @Get('/:id/comments')
