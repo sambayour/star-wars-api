@@ -20,15 +20,6 @@ export class ValidationPipe implements PipeTransform<any> {
     const errors = await validate(object);
 
     if (errors.length > 0) {
-      console.error('errors %o', errors);
-
-      const [messageKey] =
-        Object.keys(errors[0]?.constraints ?? {}) ??
-        Object.keys(errors[0].children[0].constraints ?? {});
-      const validationErrorMsg =
-        errors[0]?.constraints[messageKey] ??
-        errors[0].children[0].constraints[messageKey];
-
       throw new UnprocessableEntityException(errors);
     }
     return value;
