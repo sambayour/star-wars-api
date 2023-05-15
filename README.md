@@ -1,30 +1,6 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Star-wars-api](https://github.com/sambayour/star-wars-api) Star wars API.
 
 ## Installation
 
@@ -45,28 +21,53 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Endpoint
 
-```bash
-# unit tests
-$ npm run test
+# baseUrl
 
-# e2e tests
-$ npm run test:e2e
+Either of this baseurl can be used while testing the application
 
-# test coverage
-$ npm run test:cov
-```
+`https://lobster-app-5qld2.ondigitalocean.app`
+or
+`https://star-wars-service.onrender.com`
 
-## Support
+# Endpoint Documentation(Swagger)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+The endpoints are properly documented with Swagger and can be access at
+[digitalocean](https://lobster-app-5qld2.ondigitalocean.app/api/docs#)
+or
+[render](https://star-wars-service.onrender.com/api/docs#).
+
+# movies
+
+- GET - [all movies](https://lobster-app-5qld2.ondigitalocean.app/movies)
+
+# movies comment
+
+- GET - [get movies comments](https://lobster-app-5qld2.ondigitalocean.app/movies/2/comments)
+- POST - [add movies comments](https://lobster-app-5qld2.ondigitalocean.app/movies/2/comments)
+
+# characters
+
+- GET -[allcharacters](https://lobster-app-5qld2.ondigitalocean.app/movies/characters)
+- GET -[allcharacters sort by name asc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:asc)
+- GET -[allcharacters sort by name desc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:desc)
+- GET -[allcharacters filter by gender male](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=male)
+- GET -[allcharacters filter by gender female](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=female)
+
+# movies characters
+
+- GET -[movieId 3 with characters](https://lobster-app-5qld2.ondigitalocean.app/movies/3/characters)
+- GET -[sort movieId 3 characters by name asc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:asc)
+- GET -[sort movieId 3 characters by name desc](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?sort=name:desc)
+- GET -[filter movieId 3 characters by gender male](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=male)
+- GET -[filter movieId 3 characters by gender female](https://lobster-app-5qld2.ondigitalocean.app/movies/characters?filter=female)
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Samuel Olubayo](https://www.linkedin.com/in/samuelolubayo/)
+- Medium - [@samuelolubayo](https://medium.com/@samuelolubayo)
+- Devto - [sambayour](https://dev.to/sambayour)
 
 ## License
 
