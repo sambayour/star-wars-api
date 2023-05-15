@@ -12,6 +12,7 @@ import {
 import { MoviesService } from './movies.service';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
 import { AddCommentDTO } from './dto/comment.dto';
+import { Request } from 'express';
 import * as requestIp from 'request-ip';
 import { RealIP } from 'nestjs-real-ip';
 
